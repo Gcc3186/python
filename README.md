@@ -1,2 +1,2 @@
-# python
-First python repository
+# Python
+This is a test for the python repository
