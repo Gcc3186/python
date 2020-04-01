@@ -1,3 +1,5 @@
+## Script that compare the WRF outputs to radiosondes from Wyoming Upper Air observations
+## 
 from datetime import datetime
 
 import matplotlib.pyplot as plt
@@ -16,6 +18,7 @@ def ms_to_kt(ms):
 import wrf
 from wrf import getvar, ALL_TIMES, extract_vars, ll_to_xy, to_np
 
+#### Select data and station#####
 dt = datetime(2013, 9, 18, 12)
 
 ## CRP
@@ -23,6 +26,7 @@ station = 'CRP'
 station_id = '72251'#CRP
 lat = '27.76' #CRP
 lon = '-97.50'#CRP
+#################################
 
 # Read remote sounding data based on time (dt) and station
 df = WyomingUpperAir.request_data(dt, station)
@@ -36,14 +40,12 @@ T = data['temperature']
 Td = data['dewpoint']
 u = data['u_wind']
 v = data['v_wind']
-#print(v)
 
 # Change default to be better for skew-T
 fig = plt.figure(figsize=(9, 11))
-#fig = plt.figure()
+
 # Initiate the skew-T plot type from MetPy class loaded earlier
 skew = SkewT(fig, rotation=45)
-
 
 # Open WRF file
 #wrf_filenames = ["/glade/scratch/cuchiara/wrfout_d03_2013-09-18_12:00:00"]
