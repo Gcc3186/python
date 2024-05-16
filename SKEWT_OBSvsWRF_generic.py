@@ -51,8 +51,8 @@ skew = SkewT(fig, rotation=45)
 
 
 # Open WRF file
-#wrf_filenames = ["/glade/scratch/cuchiara/wrfout_d03_2013-09-18_12:00:00"]
-#wrf_filenames = ["/glade/scratch/cuchiara/wrfout_d03_2013-09-18_13:00:00"]
+#wrf_filenames = ["../wrfout_d03_2013-09-18_12:00:00"]
+#wrf_filenames = ["../wrfout_d03_2013-09-18_13:00:00"]
 wrf_filenames = ["wrchem_on_12UTC"]
 
 timex = 0 #00
