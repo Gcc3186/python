@@ -104,9 +104,9 @@ while it < 6:
 	plt.title('Maximun Reflectivity - '+str(timeb[ass]+' (UTC)'),fontsize=18)
 	# Shape file with country boundaries (need to download)
 	#Plot states
-	#map.readshapefile('/glade/work/cuchiara/ncl_wks/Sep02/shp/USA_adm2', 'comarques')
+	#map.readshapefile('/work/shp/USA_adm2', 'comarques')
 	# Plot roads
-	#map.readshapefile('/glade/work/cuchiara/ncl_wks/Sep02/shp/major_us_roads/tl_2016_us_primaryroads', 'comarques2',color='grey',linewidth=.5)
+	#map.readshapefile('/shp/major_us_roads/tl_2016_us_primaryroads', 'comarques2',color='grey',linewidth=.5)
 	#plt.clabel(levels, inline=1, fontsize=10, fmt="%i")
 	#plt.show()
 	plt.savefig('RFL_'+str(timeb[ass])+'.png')
