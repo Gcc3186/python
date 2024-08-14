@@ -13,9 +13,9 @@ from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import pandas
 # %%
 # %%
-f = netCDF4.Dataset('/npsnas7/NEIC_2016_V1/simulations_output/CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.20151222.avrg.grd01.nc')
+f = netCDF4.Dataset('CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.20151222.avrg.grd01.nc')
 
-netCDF4.Dataset('/npsnas7/NEIC_2016_V1/simulations_output/CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.20151222.avrg.grd01.nc')
+netCDF4.Dataset('CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.20151222.avrg.grd01.nc')
 
 # Get Ozone Variable
 latf = f.variables['latitude']
@@ -28,12 +28,12 @@ lat = latf
 lon = lonf
 # %%
 import glob
-for filepath in glob.iglob('/npsnas7/NEIC_2016_V1/simulations_output/CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.201601*.avrg.grd01'):
+for filepath in glob.iglob('CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.201601*.avrg.grd01'):
     #print(filepath)
     it = 0
     k = 0
     while it < 24:
-        #camx = uamiv('/npsnas7/NEIC_2016_V1/simulations_output/CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.20160101.avrg.grd01')
+        #camx = uamiv('CAMx.12US2.CAMx.v7.00.MPICH3.NCF4.pgfomp.20160101.avrg.grd01')
         camx = uamiv(filepath)
         o3 = camx.variables['O3'][it,0,:,:]*1000
         vvm = 75
@@ -157,10 +157,7 @@ for filepath in glob.iglob('/npsnas7/NEIC_2016_V1/simulations_output/CAMx.12US2.
         meridians = np.arange(-120., 70.,10.)
         m.drawmeridians(meridians,labels=[1,0,0,1],fontsize=18, linewidth=0)
 
-        #m.readshapefile('/home/cuchiara/shp/USA_adm1', 'comarques')
-        # Plot roads
-        #map.readshapefile('/glade/work/cuchiara/ncl_wks/Sep02/shp/major_us_roads/tl_2016_us_primaryroads', 'comarques2',color='grey',linewidth=.5)
-
+    
         # handle time
         import datetime
         jday = camx.variables['TFLAG'][:,0,0]
